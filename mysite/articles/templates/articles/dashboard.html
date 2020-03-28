@@ -1,0 +1,20 @@
+{% extends 'base_layout.html' %}
+
+{% block content %}
+  	<h1>Your Articles </h1>
+  	<div class="articles">
+  		{% for article in articles %}
+  			<div class="article">
+  				<h2><a href="/articles/{{ article.id }}/">{{ article.title }}</a></h2>
+  				<p>{{ article.snippet }}</p>
+                <p>{{ article.date }} , Author- {{ article.author }}</p>
+                <a href="/articles/edit/{{ article.id }}/" class="highlight">Edit</a>
+                
+
+  			</div>
+  		{% endfor %}
+  		
+  	</div>
+ {% endblock %}
+  	
+ 
